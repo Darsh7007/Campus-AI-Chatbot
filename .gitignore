@@ -1,0 +1,8 @@
+target/
+.idea/
+.vscode/
+.env
+.env.*
+!.env.example
+.maven-cache/
+.tools/

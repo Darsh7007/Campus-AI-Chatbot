@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f5f7fb">
+    <title>Campus AI Chatbot</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+<div class="app-shell">
+    <aside class="sidebar" aria-label="Chat navigation">
+        <a class="brand" href="/" aria-label="Campus AI home">
+            <span class="brand-mark" aria-hidden="true">✦</span>
+            <span>Campus <strong>AI</strong></span>
+        </a>
+        <button class="new-chat-button" id="new-chat" type="button">
+            <span aria-hidden="true">＋</span> New chat
+        </button>
+        <p class="sidebar-label">RECENT CHATS</p>
+        <nav id="chat-list" class="chat-list" aria-label="Recent chats"></nav>
+        <div class="sidebar-footer">
+            <span class="online-dot" aria-hidden="true"></span>
+            <span>Ready to help you learn</span>
+        </div>
+    </aside>
+
+    <main class="main-panel">
+        <header class="topbar">
+            <div class="mobile-brand">
+                <span class="brand-mark" aria-hidden="true">✦</span>
+                <strong>Campus AI</strong>
+            </div>
+            <div class="mode-control">
+                <label for="chat-mode">Assistant mode</label>
+                <select id="chat-mode">
+                    <option value="general">General</option>
+                    <option value="college">College assistant</option>
+                </select>
+            </div>
+            <div class="topbar-actions">
+                <button class="icon-button" id="theme-toggle" type="button" aria-label="Switch color theme" title="Switch color theme">☾</button>
+                <button class="text-button" id="clear-chat" type="button">Clear chat</button>
+            </div>
+        </header>
+
+        <section class="conversation" id="conversation" aria-live="polite">
+            <div class="welcome" id="welcome">
+                <div class="welcome-icon" aria-hidden="true">✦</div>
+                <p class="eyebrow">YOUR STUDY COMPANION</p>
+                <h1>What can I help you with?</h1>
+                <p class="welcome-copy">Ask a question, explore an idea, or get a hand with your next project.</p>
+                <div class="prompt-grid">
+                    <button class="prompt-card" type="button" data-prompt="Explain a difficult topic in simple terms.">
+                        <span class="prompt-symbol" aria-hidden="true">◇</span>
+                        <span><strong>Understand a topic</strong><small>Explain a difficult idea simply</small></span>
+                        <span class="prompt-arrow" aria-hidden="true">↗</span>
+                    </button>
+                    <button class="prompt-card" type="button" data-prompt="Help me debug this code and explain the fix.">
+                        <span class="prompt-symbol" aria-hidden="true">&lt;/&gt;</span>
+                        <span><strong>Get coding help</strong><small>Debug, learn, and build</small></span>
+                        <span class="prompt-arrow" aria-hidden="true">↗</span>
+                    </button>
+                    <button class="prompt-card" type="button" data-prompt="Help me create a study plan for my exams.">
+                        <span class="prompt-symbol" aria-hidden="true">▤</span>
+                        <span><strong>Plan your studies</strong><small>Make a practical study plan</small></span>
+                        <span class="prompt-arrow" aria-hidden="true">↗</span>
+                    </button>
+                    <button class="prompt-card" type="button" data-prompt="What are some useful questions to ask when researching a college topic?">
+                        <span class="prompt-symbol" aria-hidden="true">⌕</span>
+                        <span><strong>Explore college life</strong><small>Get general student guidance</small></span>
+                        <span class="prompt-arrow" aria-hidden="true">↗</span>
+                    </button>
+                </div>
+            </div>
+            <div class="messages" id="messages"></div>
+        </section>
+
+        <div class="composer-area">
+            <div class="notice" id="notice" role="status" hidden></div>
+            <form class="composer" id="chat-form">
+                <label class="visually-hidden" for="message-input">Your message</label>
+                <textarea id="message-input" rows="1" maxlength="4000" placeholder="Message Campus AI..." required></textarea>
+                <button class="send-button" id="send-button" type="submit" aria-label="Send message" title="Send message">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12 20 4l-5 16-3.5-6.5L4 12Zm7.5 1.5L20 4"/></svg>
+                </button>
+            </form>
+            <p class="composer-hint">Enter to send · Shift + Enter for a new line · AI can make mistakes</p>
+        </div>
+    </main>
+</div>
+<script src="/app.js" defer></script>
+</body>
+</html>
